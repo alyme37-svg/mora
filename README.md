@@ -4,7 +4,7 @@ MORA is a premium interactive marketplace portfolio experience for independent m
 
 **[Explore the live demo](https://mora-wheat.vercel.app)**
 
-![MORA editorial marketplace home](docs/showcase/01-home.png)
+![MORA premium multi-vendor marketplace case study](docs/showcase/cover.png)
 
 ## A marketplace that feels lived in
 
