@@ -38,11 +38,7 @@ Seller changes appear in the shopper catalog. Shopper orders appear in the corre
 
 Mobile layouts are composed for touch rather than compressed from desktop. Navigation, product galleries, purchase actions, checkout, operational cards, and dense management views adapt around 375px while retaining MORA's warm editorial identity.
 
-<p align="center">
-  <img src="docs/showcase/08-mobile-home.png" width="320" alt="MORA mobile marketplace home" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="docs/showcase/09-mobile-product.png" width="320" alt="MORA mobile product page" />
-</p>
+![MORA mobile marketplace and product experience](docs/showcase/mobile-cover.png)
 
 ## Technical foundation
 
