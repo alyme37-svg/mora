@@ -720,7 +720,7 @@ export const useMarketplaceStore = create<MarketplaceState>()(
     }),
     {
       name: MARKETPLACE_STORAGE_KEY,
-      version: 5,
+      version: 6,
       migrate: (persistedState, version) => {
         const persisted = persistedState as Partial<MarketplaceState>;
         let migrated: Partial<MarketplaceState> = { ...persisted };
@@ -729,15 +729,15 @@ export const useMarketplaceStore = create<MarketplaceState>()(
           migrated = {
             ...migrated,
             products: persisted.products.map((product) => {
-            const curatedImage = productVisuals[product.slug];
-            const curatedGallery = productGalleryVisuals[product.slug];
-            return curatedImage || curatedGallery
-              ? {
-                  ...product,
-                  images:
-                    curatedGallery ?? productGallery(curatedImage as string),
-                }
-              : product;
+              const curatedImage = productVisuals[product.slug];
+              const curatedGallery = productGalleryVisuals[product.slug];
+              return curatedImage || curatedGallery
+                ? {
+                    ...product,
+                    images:
+                      curatedGallery ?? productGallery(curatedImage as string),
+                  }
+                : product;
             }),
           };
         }
@@ -783,6 +783,42 @@ export const useMarketplaceStore = create<MarketplaceState>()(
             ...migrated,
             reviews: (migrated.reviews ?? []).map(
               (review) => freshReviewById.get(review.id) ?? review,
+            ),
+          };
+        }
+
+        if (version < 6) {
+          const freshSeed = createMarketplaceSeed();
+          const freshProductById = new Map(
+            freshSeed.products.map((product) => [product.id, product]),
+          );
+          const freshSellerById = new Map(
+            freshSeed.sellers.map((seller) => [seller.id, seller]),
+          );
+          migrated = {
+            ...migrated,
+            products: (migrated.products ?? []).map((product) =>
+              product.description.includes("fictional MORA marketplace demo")
+                ? {
+                    ...product,
+                    description:
+                      freshProductById.get(product.id)?.description ??
+                      product.description,
+                  }
+                : product,
+            ),
+            sellers: (migrated.sellers ?? []).map((seller) =>
+              seller.settings.story.toLowerCase().includes("fictional")
+                ? {
+                    ...seller,
+                    settings: {
+                      ...seller.settings,
+                      story:
+                        freshSellerById.get(seller.id)?.settings.story ??
+                        seller.settings.story,
+                    },
+                  }
+                : seller,
             ),
           };
         }

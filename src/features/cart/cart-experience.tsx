@@ -253,7 +253,7 @@ export function CartExperience() {
           </Link>
         </Button>
         <p className="mt-4 text-center text-[0.6875rem] leading-5 text-muted-foreground">
-          Fictional checkout only. Each creator receives a separate fulfillment
+          Demo checkout only. Each creator receives a separate fulfillment
           group.
         </p>
       </aside>

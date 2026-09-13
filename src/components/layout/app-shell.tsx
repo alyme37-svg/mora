@@ -29,8 +29,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <PageContainer className="flex min-h-9 items-center justify-between gap-4 text-[0.6875rem] font-medium tracking-wide">
           <span className="sm:hidden">Portfolio by Ali Elhussein</span>
           <span className="hidden sm:inline">
-            A fictional portfolio experience by Ali Elhussein · no real
-            purchases
+            Interactive portfolio demo by Ali Elhussein · no real purchases
           </span>
           <DemoRoleDialog />
         </PageContainer>
@@ -86,8 +85,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <div>
             <Brand />
             <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">
-              Thoughtful objects from fictional independent studios, presented
-              as an interactive portfolio experience.
+              Thoughtful objects from independent studios, presented as an
+              interactive portfolio experience.
             </p>
             <p className="mt-5 text-xs text-muted-foreground">
               © 2026 Ali Elhussein. All rights reserved.

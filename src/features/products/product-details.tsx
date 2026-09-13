@@ -48,8 +48,8 @@ export function ProductDetails({
           <p className="mt-3">
             {seller.settings.policies ??
               (seller.settings.acceptsReturns
-                ? "This fictional shop accepts returns within 14 days of delivery."
-                : "This fictional made-to-order shop does not accept returns.")}
+                ? "This shop accepts returns within 14 days of delivery."
+                : "This made-to-order shop does not accept returns.")}
           </p>
         </div>
       </details>
@@ -63,7 +63,7 @@ export function ProductDetails({
         </summary>
         <div className="pb-6 text-sm leading-6 text-muted-foreground">
           Treat small-batch objects gently. Product-specific care instructions
-          are included as part of this fictional order experience.
+          are included as part of this demo order experience.
         </div>
       </details>
     </div>

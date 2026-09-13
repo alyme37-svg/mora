@@ -46,7 +46,7 @@ export function PersistedStorefront({
       <PageContainer className="py-20">
         <EmptyState
           icon={Store}
-          title="This fictional storefront is paused"
+          title="This storefront is taking a short pause"
           description="Its public profile and listings are unavailable while the seller is suspended in the Mora demo."
           action={
             <Button asChild>
@@ -162,7 +162,7 @@ export function PersistedStorefront({
         <SectionHeading
           eyebrow="Shopper notes"
           title="Reviews of this creator"
-          description="Reviews tied to delivered fictional orders."
+          description="Reviews shared after delivered demo orders."
         />
         <ReviewCollection sellerId={seller.id} limit={3} />
       </PageContainer>
@@ -181,8 +181,8 @@ export function PersistedStorefront({
             <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
               {seller.settings.policies ??
                 (seller.settings.acceptsReturns
-                  ? "Unused pieces may be returned within 14 days of delivery in this fictional demo."
-                  : "This fictional shop does not accept returns.")}
+                  ? "Unused pieces may be returned within 14 days of delivery."
+                  : "This shop does not accept returns.")}
             </p>
             {seller.settings.storefrontStatus === "away" ? (
               <p className="mt-4 font-medium text-danger">

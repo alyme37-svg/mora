@@ -42,7 +42,7 @@ export function StorefrontProducts({
       <PageContainer className="pb-16 sm:pb-20">
         <EmptyState
           icon={Store}
-          title="This fictional storefront is paused"
+          title="This storefront is taking a short pause"
           description="Its listings are unavailable while the seller is suspended in the Mora demo."
           action={
             <Button asChild>
@@ -58,7 +58,7 @@ export function StorefrontProducts({
     <PageContainer className="pb-16 sm:pb-20">
       <SectionHeading
         title={`Shop ${seller.settings.displayName}`}
-        description={`${sellerProducts.length} fictional small-batch pieces from this studio.`}
+        description={`${sellerProducts.length} small-batch pieces from this studio.`}
       />
       {seller.settings.storefrontStatus === "away" ? (
         <p className="mb-6 rounded-md border border-gold/35 bg-gold/10 px-4 py-3 text-sm font-medium text-walnut">

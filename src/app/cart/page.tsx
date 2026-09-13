@@ -6,7 +6,7 @@ import { CartExperience } from "@/features/cart/cart-experience";
 
 export const metadata: Metadata = {
   title: "Your cart",
-  description: "Review your fictional multi-creator Mora cart.",
+  description: "Review your multi-creator Mora cart.",
 };
 
 export default function CartPage() {
@@ -15,7 +15,7 @@ export default function CartPage() {
       <EditorialHeading
         eyebrow="Your selection"
         title="A thoughtful cart, gathered together."
-        description="Review quantities and creator groups before entering Mora’s fictional checkout."
+        description="Review quantities and creator groups before entering Mora’s demo checkout."
       />
       <div className="mt-10">
         <CartExperience />

@@ -8,7 +8,7 @@ import { buildCatalog } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "Shop independent design",
   description:
-    "Browse fictional home, fashion, beauty, art, and accessory collections on Mora.",
+    "Browse curated home, fashion, beauty, art, and accessory collections on Mora.",
 };
 
 const validSorts = new Set([
@@ -54,7 +54,7 @@ export default async function ShopPage({
         </h1>
         <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
           Browse small-run objects, considered clothing, and everyday rituals
-          from independent fictional studios.
+          from independent studios.
         </p>
       </div>
       <div className="mt-10">

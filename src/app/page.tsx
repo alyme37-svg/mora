@@ -40,17 +40,17 @@ export default function MarketplaceHomePage() {
   return (
     <>
       <section className="relative min-h-[31rem] overflow-hidden border-b bg-surface sm:min-h-[34rem] lg:min-h-[35rem]">
-          <Image
-            src={homeVisuals.hero}
-            alt="Handmade ceramics, a candle, and art books in a warm maker-inspired interior"
-            fill
-            loading="eager"
-            sizes="100vw"
-            className="object-cover object-[68%_center] sm:object-[62%_center]"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,249,0.97)_0%,rgba(255,253,249,0.9)_62%,rgba(255,253,249,0.58)_100%)] sm:bg-[linear-gradient(90deg,rgba(255,253,249,0.98)_0%,rgba(255,253,249,0.91)_37%,rgba(255,253,249,0.18)_72%,rgba(40,31,25,0.08)_100%)]" />
-          <PageContainer className="relative flex min-h-[31rem] flex-col justify-center py-10 sm:min-h-[34rem] sm:py-12 lg:min-h-[35rem]">
-            <div className="max-w-[48rem]">
+        <Image
+          src={homeVisuals.hero}
+          alt="Handmade ceramics, a candle, and art books in a warm maker-inspired interior"
+          fill
+          loading="eager"
+          sizes="100vw"
+          className="object-cover object-[68%_center] sm:object-[62%_center]"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,249,0.97)_0%,rgba(255,253,249,0.9)_62%,rgba(255,253,249,0.58)_100%)] sm:bg-[linear-gradient(90deg,rgba(255,253,249,0.98)_0%,rgba(255,253,249,0.91)_37%,rgba(255,253,249,0.18)_72%,rgba(40,31,25,0.08)_100%)]" />
+        <PageContainer className="relative flex min-h-[31rem] flex-col justify-center py-10 sm:min-h-[34rem] sm:py-12 lg:min-h-[35rem]">
+          <div className="max-w-[48rem]">
             <p className="mb-5 text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-caramel">
               Independent makers · thoughtful objects
             </p>
@@ -77,18 +77,23 @@ export default function MarketplaceHomePage() {
             </div>
             <div className="mt-9 flex items-center gap-3 text-xs text-muted-foreground">
               <span className="h-px w-8 bg-gold" aria-hidden="true" />
-              <span>A marketplace for real craft and fictional commerce.</span>
+              <span>
+                A marketplace for thoughtful objects and independent craft.
+              </span>
             </div>
-            </div>
-          </PageContainer>
-          <Link
-            href="/stores/clay-and-co"
-            className="absolute bottom-5 right-5 hidden min-h-11 items-center gap-3 rounded-md border border-white/25 bg-foreground/76 px-4 text-xs font-semibold text-surface transition-colors hover:bg-foreground/88 sm:inline-flex"
-          >
-            Meet the makers <ArrowRight aria-hidden="true" className="size-4" />
-          </Link>
+          </div>
+        </PageContainer>
+        <Link
+          href="/stores/clay-and-co"
+          className="absolute bottom-5 right-5 hidden min-h-11 items-center gap-3 rounded-md border border-white/25 bg-foreground/76 px-4 text-xs font-semibold text-surface transition-colors hover:bg-foreground/88 sm:inline-flex"
+        >
+          Meet the makers <ArrowRight aria-hidden="true" className="size-4" />
+        </Link>
       </section>
-      <section className="border-b bg-surface" aria-label="Marketplace benefits">
+      <section
+        className="border-b bg-surface"
+        aria-label="Marketplace benefits"
+      >
         <PageContainer className="grid grid-cols-2 lg:grid-cols-4">
           {benefits.map(({ icon: Icon, title, copy }, index) => (
             <div

@@ -147,7 +147,7 @@ const sellers: Seller[] = [
       displayName: "Clay & Co.",
       tagline: "Objects shaped slowly, for rituals kept daily.",
       story:
-        "A fictional two-person ceramics studio exploring useful forms and earthy glazes.",
+        "A two-person ceramics studio exploring useful forms and earthy glazes.",
       accentColor: "#A66F49",
       announcement: "Small batches, released every Friday.",
       policies:
@@ -167,8 +167,7 @@ const sellers: Seller[] = [
     settings: {
       displayName: "Lume Studio",
       tagline: "Soft light and quieter evenings.",
-      story:
-        "A fictional lighting and scent studio inspired by calm domestic spaces.",
+      story: "A lighting and scent studio inspired by calm domestic spaces.",
       accentColor: "#C39B6A",
       acceptsReturns: true,
       processingDays: 2,
@@ -184,8 +183,7 @@ const sellers: Seller[] = [
     settings: {
       displayName: "The Minimalist",
       tagline: "Fewer, better things to wear and carry.",
-      story:
-        "A fictional independent label making simple pieces from natural fibers.",
+      story: "An independent label making simple pieces from natural fibers.",
       accentColor: "#7C856B",
       acceptsReturns: true,
       processingDays: 2,
@@ -202,7 +200,7 @@ const sellers: Seller[] = [
       displayName: "Atelier Home",
       tagline: "Artful utility for the lived-in home.",
       story:
-        "A fictional collective pairing small furniture runs with limited-edition prints.",
+        "A creative collective pairing small furniture runs with limited-edition prints.",
       accentColor: "#70482D",
       acceptsReturns: false,
       processingDays: 5,
@@ -219,7 +217,7 @@ const sellers: Seller[] = [
       displayName: "Cozy Living",
       tagline: "Warm layers and comforting details.",
       story:
-        "A fictional textile studio focused on soft texture and responsible materials.",
+        "A textile studio focused on soft texture and responsible materials.",
       accentColor: "#8B735B",
       acceptsReturns: true,
       processingDays: 4,
@@ -386,13 +384,16 @@ function buildProducts(): Product[] {
     ([name, sellerSlug, categorySlug, amount, photo, materials], index) => {
       const slug = toSlug(name);
       const hasVariants = name.includes("Shirt") || name.includes("Blanket");
+      const sellerName =
+        sellers.find((seller) => seller.id === `seller_${sellerSlug}`)?.settings
+          .displayName ?? "an independent studio";
       return {
         id: `product_${slug}`,
         sellerId: `seller_${sellerSlug}`,
         categoryId: `cat_${categorySlug}`,
         slug,
         name,
-        description: `A considered ${name.toLowerCase()} made in small batches for the fictional MORA marketplace demo.`,
+        description: `A considered ${name.toLowerCase()} made in small batches by ${sellerName}.`,
         price: usd(amount),
         status: "active",
         inventory: 8 + (index % 7) * 2,
@@ -683,8 +684,7 @@ function buildReviews(orders: MarketplaceOrder[]): Review[] {
         productId: line.productId,
         shopperId: order.shopperId,
         rating:
-          showcase?.[2] ??
-          ((orderIndex % 4 === 0 ? 4 : 5) as Review["rating"]),
+          showcase?.[2] ?? ((orderIndex % 4 === 0 ? 4 : 5) as Review["rating"]),
         title,
         body,
         createdAt: isoDaysBefore(Math.max(1, 68 - orderIndex * 6)),
